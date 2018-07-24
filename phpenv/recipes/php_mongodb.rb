@@ -3,14 +3,14 @@ execute 'install_php_mongodb_driver' do
   action :run
 end
 
-template 'mongo.ini' do
+template 'mongodb.ini' do
   case node[:platform]
   when 'centos','redhat','fedora','amazon'
-    path "/etc/php-5.6.d/mongo.ini"
+    path "/etc/php-5.6.d/mongodb.ini"
   when 'debian','ubuntu'
-    path "/etc/php5/conf.d/mongo.ini"
+    path "/etc/php5/conf.d/mongodb.ini"
   end
-  source 'mongo.ini.erb'
+  source 'mongodb.ini.erb'
   owner 'root'
   group 'root'
   mode 0644
