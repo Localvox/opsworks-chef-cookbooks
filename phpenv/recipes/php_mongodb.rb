@@ -1,5 +1,5 @@
-execute 'install_php_mongo_driver' do
-  command "pecl install mongo"
+execute 'install_php_mongodb_driver' do
+  command "pecl install mongodb"
   action :run
 end
 
